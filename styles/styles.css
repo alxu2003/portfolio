@@ -12,17 +12,17 @@
 }
 
 /* Keep the old page painted until the next one is ready on same-site navigation */
-/* @view-transition {
+@view-transition {
     navigation: auto;
-} */
+}
 
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
     ::view-transition-group(*),
     ::view-transition-old(*),
     ::view-transition-new(*) {
         animation: none;
     }
-} */
+}
 
 *,
 *::before,
