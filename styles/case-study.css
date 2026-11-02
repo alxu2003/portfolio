@@ -1,0 +1,587 @@
+/* Case study pages (e.g. saveauto.html) — a long-form article layout on a 12-column grid,
+   distinct from the homepage's full-viewport project-card carousel. */
+
+.case {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  max-width: 1512px;
+  margin-inline: auto;
+  padding-top: calc(var(--navbar-height) + (var(--min-spacing-block) * 2));
+  padding-bottom: calc(var(--min-spacing-block) * 3);
+}
+
+.case-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  font-weight: medium;
+  gap: 32px 8px;
+
+  .case-hero {
+    grid-column: 3 / span 5;
+    font-size: var(--banner-size);
+    color: var(--text-secondary);
+  }
+
+  .meta {
+    grid-column: 3 / span 8;
+    display: flex;
+    gap: 32px;
+    font-size: var(--body-sm-size);
+
+    dl {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    dt {
+      color: var(--text-secondary);
+    }
+
+    dd {
+      margin: 0;
+      color: var(--text-primary);
+    }
+  } 
+}
+
+/* Device mockup row */
+.mockup {
+  grid-template-rows: auto;
+  
+  .mockup-card {
+    grid-column: 2 / -2;
+  }
+}
+
+/* Shared intro pattern: a green mono eyebrow, used two ways below. */
+.split-text {
+  .row-eyebrow {
+    grid-column: 3 / span 2;
+    grid-row: 1 / 2;
+  }
+
+  .row-heading {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+  }
+
+  .row-body {
+    grid-column: 6 / span 4;
+    grid-row-start: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .row-meta {
+      display: flex;
+      gap: 64px;
+      color: var(--text-secondary);
+
+      @media (width < 644px) {
+        gap: 32px;
+      }
+    }
+  }
+
+  /* Medium widths: widen both columns so the heading doesn't wrap word-by-word */
+  @media (width < 1200px) {
+    .row-eyebrow,
+    .row-heading {
+      grid-column: 2 / span 4;
+    }
+
+    .row-body {
+      grid-column: 6 / span 6;
+    }
+  }
+
+  /* Small widths: stack eyebrow → heading → body in one column */
+  @media (width < 900px) {
+    grid-template-rows: auto auto auto;
+    row-gap: 16px;
+
+    .row-heading,
+    .row-body {
+      grid-column: 1 / -1;
+    }
+    .row-eyebrow {
+      grid-row: 1;
+    }
+    .row-heading {
+      grid-row: 2;
+    }
+    .row-body {
+      grid-row: 3;
+    }
+  }
+}
+
+.stacked-text {
+  grid-template-rows: auto auto auto;
+  
+  .row-eyebrow {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+  }
+
+  .row-heading {
+    grid-column: 3 / span 8;
+    grid-row: 2;
+  }
+
+  .row-subheading {
+    grid-column: 3 / span 8;
+    grid-row: 3;
+  }
+
+}
+
+/* Video player cards (original + final before/after screens) */
+.card-container {
+  --container-height: 64vh;
+  grid-column: 3 / span 10;
+  height: var(--container-height);
+  width: fit-content;
+
+  &.video {
+    display: flex;
+    gap: 8px;
+  }
+
+  &.research {
+    grid-column: 3 / span 8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Row 1 hugs the logo card; the time card spans the fr row, so it's excluded from row 1's sizing */
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    gap: 8px;
+    height: auto;
+
+    .logo {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .time {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+
+      .header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+
+        .result {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          width: 100%;
+
+          .name {
+            color: var(--text-primary);
+            font-size: var(--body-sm-size);
+          }
+
+          .timing-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            width: 100%;
+
+            .bar-fill {
+              height: 4px;
+              border-radius: 100px;
+              background-color: var(--green);
+            }
+
+            .bar-time {
+              color: var(--text-primary);
+              font-size: var(--body-xsm-size);
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    .insight {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+}
+
+.card {
+    pointer-events: none;
+    --card-gap: calc(2*var(--min-spacing-block, 16px));
+    --card-label-line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--card-gap);
+    padding: var(--min-spacing-block,16px) var(--min-spacing-inline, 24px);
+    border-radius: 16px;
+    background-color: var(--surface-secondary);
+    flex: none;
+    height: 100%;
+
+    &.grid {
+      height: fit-content;
+    }
+
+    figcaption {
+      font-size: var(--body-xsm-size);
+      color: var(--text-secondary);
+      width: 100%;
+      text-align: right;
+    }
+
+    /* Fill remaining card height (computed so it's definite for width sizing), hug video width */
+    .video-card-frame {
+      pointer-events: none;
+      position: relative;
+      height: calc(
+        100% - 2 * var(--card-gap)
+        - var(--card-label-line-height) * (var(--mono-size) + var(--body-xsm-size))
+      );
+      overflow: hidden;
+      border: 1px solid var(--disabled);
+      background-color: var(--black);
+
+      &.desktop {
+        border-radius: 22px;
+        /* 16px bezel + 14px top / 22px bottom strips */
+        padding: 30px 16px 38px;
+      }
+
+      &.mobile {
+        border-radius: 38px;
+        padding: 8px;
+      }
+
+      /* Fill frame height, width follows the video's aspect ratio */
+      .video-card-screen {
+        /* Re-enable hover for play-on-hover.js (card + frame set none, which inherits) */
+        pointer-events: auto;
+        display: block;
+        height: 100%;
+        width: auto;
+        background-color: var(--black);
+        opacity: .8;
+        border-radius: 30px;
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &.desktop .video-card-screen {
+        border-radius: 0px;
+      }
+
+      .video-card-statusbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--black);
+        font-size: 10px;
+        z-index: 1;
+        position: absolute;
+        width: 72%;
+        top: 4%;
+        left: 16%;
+
+        img {
+          width: 42px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+/* Accordion */
+
+.accordion {
+  grid-column: 3 / span 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--min-spacing-block,16px) var(--min-spacing-inline, 24px);
+  border-radius: 16px;
+  background-color: var(--surface-secondary);
+
+  header {
+    .accordion-tabs {
+      border: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: var(--min-spacing-inline, 24px);
+      margin-bottom: calc(0.5 * var(--min-spacing-block, 16px));
+
+      /* Visually hidden, still read by screen readers */
+      legend {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      label {
+        position: relative;
+
+        /* Visually hidden but focusable, so Tab/arrow keys still work */
+        input[type="radio"] {
+          position: absolute;
+          inset: 0;
+          margin: 0;
+          opacity: 0;
+          cursor: pointer;
+        }
+        span {
+          color: var(--disabled);
+          transition: color var(--ease-signature) 0.2s;
+          cursor: pointer;
+        }
+        input[type="radio"]:checked + span {
+          color: var(--text-secondary);
+        }
+        input[type="radio"]:focus-visible + span {
+          outline: 2px solid var(--text-secondary);
+          outline-offset: 4px;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    .accordion-divider {
+      height: 1px;
+      background-color: var(--text-secondary);
+      margin-bottom: var(--min-spacing-block);
+    }
+  }
+
+  /* One panel per tab; the panel matching the checked tab's position is shown */
+  .accordion-content {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(2*var(--min-spacing-block,24px));
+    min-height: 400px;
+
+    .accordion:has(.accordion-tabs label:nth-of-type(1) input:checked) &:nth-of-type(1),
+    .accordion:has(.accordion-tabs label:nth-of-type(2) input:checked) &:nth-of-type(2),
+    .accordion:has(.accordion-tabs label:nth-of-type(3) input:checked) &:nth-of-type(3) {
+      display: flex;
+
+      /* Fade in on swap */
+      @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 1.2s var(--ease-signature);
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+
+    .accordion-examples {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 32px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .accordion-caption {
+      margin-top: auto;
+      align-self: flex-end;
+      text-align: end;
+    }
+  }
+}
+/* Research cards */
+
+.case-logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 25px 50px;
+  width: 100%;
+  padding-block: 8px;
+}
+.case-logo-row img {
+  height: 32px;
+  width: auto;
+}
+.case-logo-row .case-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.case-insight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--disabled);
+  background-color: var(--surface-tertiary);
+}
+.case-insight p:first-child {
+  width: 100%;
+  text-align: left;
+}
+.case-insight__statement {
+  width: 100%;
+  text-align: left;
+  color: var(--green);
+  font-size: var(--body-reg-size);
+}
+.case-insight__count {
+  color: var(--text-secondary);
+  font-size: var(--body-xsm-size);
+}
+
+/* Design-decision before/after comparison rows */
+
+.case-comparison {
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 32px 8px;
+
+  .comparison-row {
+    grid-column: 3 / span 8;
+    display: grid;
+    grid-template-columns: subgrid;
+
+    .comparison-text {
+      grid-column: 1 / span 3;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  .comparison-card {
+    grid-column: 5 / span 4;
+    height: fit-content;
+    
+    video {
+      width: 100%;
+    }
+  }
+}
+
+.case-comparison__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+.case-comparison__media img {
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Result cards */
+
+.case-result {
+  .case-result-grid {
+    grid-column: 3 / span 8;
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: 8px;
+    align-items: start;
+
+    .result-card {
+      grid-column: span 2;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background-color: var(--surface-secondary);
+      border-radius: 16px;
+      padding: 16px 24px;
+      
+
+      .case-result {
+        color: var(--text-primary);
+      }
+
+      strong {
+        color: var(--green);
+      }
+
+      .attribution {
+        align-self: flex-end;
+        color: var(--text-secondary);
+        font-size: var(--body-sm-size);
+      }
+    }
+  }
+  
+}
+.case-result__description {
+  font-size: var(--body-sm-size);
+  color: var(--text-secondary);
+}
+
+/* Small-screen fallback: collapse the 12-column grid to a single readable column */
+@media (width < 900px) {
+  .case-row > * {
+    grid-column: 1 / -1 !important;
+  }
+  .case-comparison {
+    grid-template-columns: 1fr;
+  }
+  .card-container.research {
+    grid-template-rows: none;
+  }
+  .card-container.research,
+  .case-result-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-container.research > .card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}

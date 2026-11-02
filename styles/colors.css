@@ -1,0 +1,24 @@
+:root {
+    /* Primitives */
+    --black: #181917;
+    --white: #E9EFDD;
+    --gray: #ABB29F;
+    --green: #A4E02B;
+    --disabled: #4C5044;
+    --saveauto-blue: #274DCB;
+
+    /* Surfaces */
+    --surface-primary: var(--black);
+    --surface-secondary: #1F211E;
+    --surface-tertiary: #242723;
+
+    /* Text */
+    --text-primary: var(--white);
+    --text-secondary: var(--gray);
+
+    /* Buttons */
+    --btn-default-clr: #373C33;
+    --btn-icon-clr: var(--white);
+    --btn-hover-clr: #454C40;
+    --btn-border-clr: #E9EFDD;
+}

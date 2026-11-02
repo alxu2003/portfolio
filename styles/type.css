@@ -1,0 +1,9 @@
+:root {
+    --type-base: 1rem;
+    --banner-size: calc(3*var(--type-base));
+    --mono-size: calc(0.625*var(--type-base));
+    --heading-size: calc(1.5*var(--type-base));
+    --body-reg-size: calc(1.25*var(--type-base));
+    --body-sm-size: var(--type-base);
+    --body-xsm-size: calc(0.75*var(--type-base));
+}

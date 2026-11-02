@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Alex Xu — SaveAutoInsurance.com</title>
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@500&display=swap" />
+        <link rel="stylesheet" href="styles/styles.css" />
+        <link rel="stylesheet" href="styles/case-study.css" />
+    </head>
+    <body>
+        <nav aria-label="Website navigation">
+            <!--Home Icon Button-->
+            <a id="home" href="index.html">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_3035_105)">
+                    <path d="M13.5001 20.5001C16.3128 16.7986 19.2103 15.3919 23.5268 13.0001C27.7369 15.4839 30.5957 16.8768 33.5001 20.5001C29.9037 24.0291 27.667 25.9105 23.5268 28.5001C18.7123 25.8674 16.513 23.9156 13.5001 20.5001Z" fill="#E9EFDD"/>
+                    <path d="M13.5001 20.5001C16.3128 16.7986 19.2103 15.3919 23.5268 13.0001M13.5001 20.5001C16.513 23.9156 18.7123 25.8674 23.5268 28.5001M13.5001 20.5001C17.4944 23.8 18.9318 25.444 23.5268 28.5001M13.5001 20.5001C10.0458 22.925 6.74932 28.5033 8.50009 34.5001C12.2789 34.0144 17.9879 28.5211 23.5268 28.5001M23.5268 13.0001C27.7369 15.4839 30.5957 16.8768 33.5001 20.5001M23.5268 13.0001L33.5001 20.5001M23.5268 28.5001C25.8317 26.8588 27.9253 26.5042 33.5001 20.5001C34.5016 15.5689 36.423 15.7238 37.0001 12.0001C32.4209 11.0397 27.6257 11.3132 23.5268 13.0001M23.5268 13.0001C18.9875 15.4839 16.4297 16.8767 13.5139 20.5M13.5139 20.5C12.5083 15.5688 10.5793 15.7237 10 12C14.5973 11.0396 19.1074 11.3132 23.5268 13.0001L13.5139 20.5ZM33.5001 20.5001C29.9037 24.0291 27.667 25.9105 23.5268 28.5001M23.5268 28.5001C28.019 25.8674 30.5232 23.9156 33.5287 20.5001M33.5287 20.5001C36.9744 22.925 40.2628 28.5033 38.5163 34.5001C34.7468 34.0144 28.6949 28.5211 23.5268 28.5001C27.8141 25.444 29.5443 23.8 33.5287 20.5001Z" stroke="#E9EFDD"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_3035_105">
+                    <rect width="48" height="48" rx="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+            </a>
+            <!--Right Navbar Links-->
+            <div id="navbar">
+                <ul>
+                    <li class="is-active"><a href="index.html"><p class="mono">Work</p></a></li>
+                    <li><a href="#"><p class="mono">Play</p></a></li>
+                    <li><a href="#"><p class="mono">About</p></a></li>
+                </ul>
+                <!--Linkedin Icon Button-->
+                <a href="https://www.linkedin.com/in/alex-liaoxing-xu/" id="linkedin" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z" fill="#E9EFDD"/>
+                    </svg>
+                </a>
+                <!--Email Icon Button-->
+                <a href="#" id="email">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 8L12 13L4 8V6L12 11L20 6M20 4H4C2.89 4 2 4.89 2 6V18C2 18.5304 2.21071 19.0391 2.58579 19.4142C2.96086 19.7893 3.46957 20 4 20H20C20.5304 20 21.0391 19.7893 21.4142 19.4142C21.7893 19.0391 22 18.5304 22 18V6C22 5.46957 21.7893 4.96086 21.4142 4.58579C21.0391 4.21071 20.5304 4 20 4Z" fill="#E9EFDD"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+
+        <main class="case">
+            <!-- Hero -->
+            <section class="case-row hero">
+                <h1 class="case-hero">
+                    you have <strong>three minutes</strong> before you get to work to shop for auto insurance. so <strong>why</strong> <strong>does it take</strong> <strong>five?</strong>
+                </h1>
+                <dl class="meta">
+                    <dl>
+                        <dt>timeline</dt>
+                        <dd>June - July 2026</dd>
+                    </dl>
+                    <dl>
+                        <dt>role</dt>
+                        <dd>Product Design</dd>
+                    </dl>
+                    <dl>
+                        <dt>impact</dt>
+                        <dd>50% shorter completion times</dd>
+                    </dl>
+                </dl>
+            </section>
+
+            <!-- Device mockup -->
+            <section class="case-row mockup">
+                <figure class="mockup-card saveauto">
+                    <img
+                        class="mockup-card__image"
+                        src="images/allstate-arity-mockup.webp"
+                        alt="Save Auto Insurance redesign shown on a laptop and phone: a hero with a zip code lookup for auto insurance quotes, followed by a row of insurance carrier logos"
+                        width="1200"
+                        height="700"
+                        decoding="async"
+                    >
+                </figure>
+            </section>
+
+            <!-- Context -->
+            <section class = "case-row split-text">
+                    
+                <p class="mono primary row-eyebrow">context</p>
+                <h1 class="heading row-heading">an essential driver of new policy purchases</h1>
+                
+                <div class="row-body">
+                    <p class="body-reg">Saveautoinsurance.com allows users to calculate policy price estimates from multiple partners like Progressive and Statefarm, and makes <strong>$100,000+</strong> in revenue each month.</p>
+                    <dl class="row-meta">
+                        <dt>team</dt>
+                        <ul>
+                            <li>me, alex xu</li>
+                            <li>supervisor, maggie callahan</li>
+                        </ul>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- Original video players -->
+            <section class="case-row">
+                <div class="card-container video">
+                    <figure class="card">
+                        <p class="mono">01</p>
+                        <div class="video-card-frame desktop">
+                            <video class="video-card-screen" loop preload="metadata" muted>
+                                <source src="videos/og-desktop-saveauto-720p.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <figcaption>original desktop</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <p class="mono">02</p>
+                        <div class="video-card-frame mobile">
+                            <div class="video-card-statusbar">
+                                <span>9:41</span>
+                                <img src="images/saveauto-icon-signal-wifi-battery.svg" alt="" width="42.7" height="7.24">
+                            </div>
+                            <video class="video-card-screen" loop preload="metadata" muted>
+                                <source src="videos/og-mobile-saveauto-720p.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <figcaption>original mobile</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Problem -->
+            <section class="case-row stacked-text">
+                <p class="mono primary row-eyebrow">problem</p>
+                <h1 class="banner row-heading">A significant percentage of users give up before completing their quote</h1>
+                <p class="body-reg row-subheading">due to confusing copywriting, missing trust signals, and cognitive overload.</p>
+            </section>
+
+            <!-- Accordion: copy critique -->
+            <section class="case-row">
+                <figure class="accordion">
+                    <header>
+                        <fieldset class="accordion-tabs">
+                            <legend>problem area</legend>
+                            <label>
+                                <input type="radio" name="copy-options" aria-controls="copy-panel" checked>
+                                <span class="mono">copy</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="copy-options" aria-controls="trust-panel">
+                                <span class="mono">trust</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="copy-options" aria-controls="interface-panel">
+                                <span class="mono">interface</span>
+                            </label>
+                        </fieldset>
+                        <div class="accordion-divider"></div>
+                    </header>
+                    <div class="accordion-content" id="copy-panel" aria-live="polite">
+                        <div class="accordion-examples">
+                            <img src="images/accordion/copy-critique.webp" alt="Annotated critique of questions 8 and 9: &ldquo;clean driving record&rdquo; is never defined, and the time ranges skip from 2&ndash;3 years to 4+ years with no 3&ndash;4 year option" width="1436" height="545" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="body-xsm accordion-caption">critique of Saveautoinsurance.com, Driver Information Questions 8 and 9.</figcaption>
+                    </div>
+                    <div class="accordion-content" id="trust-panel" aria-live="polite">
+                        <div class="accordion-examples">
+                            <img src="images/accordion/trust-critique.webp" alt="Annotated Saveautoinsurance.com home page: no navigation, no explanation of how user info is used, non-standard &ldquo;Secure Site&rdquo; label, and specific price promises with no named insurers" width="1436" height="545" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="body-xsm accordion-caption">critique of Saveautoinsurance.com, Lack of standard trust signals, Home Page</figcaption>
+                    </div>
+                    <div class="accordion-content" id="interface-panel" aria-live="polite">
+                        <div class="accordion-examples">
+                            <img src="images/accordion/interface-critique.webp" alt="Annotated vehicle year question: nested containers constrict the question space, insurer logos are irrelevant to answering, and the year dropdown covers the whole screen when opened" width="1436" height="545" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="body-xsm accordion-caption">critique of Saveautoinsurance.com, overall user interface</figcaption>
+                    </div>
+                </figure>
+            </section>
+
+            <!-- User research -->
+            <section class="case-row split-text">
+
+                <p class="mono primary row-eyebrow">user research</p>
+                <h1 class="heading row-heading">competitive analysis and user testing</h1>
+
+                <div class="row-body">
+                    <p class="body-reg">I started with a competitive analysis of our 3 main competitors; key features, question grouping, and overall aesthetic. I continued with user testing, timing 6 users completing each quote with a premade profile.</p>
+                </div>
+            </section>
+
+            <!-- Research cards -->
+            <section class="case-row">
+                <div class="card-container research">
+                    <figure class="card grid logo">
+                        <p class="mono">01</p>
+                        <div class="case-logo-row">
+                            <img src="images/saveauto-logo-competitor-1.svg" alt="Insurify logo" width="117" height="46">
+                            <div class="case-logo-group">
+                                <img src="images/saveauto-logo-nerdwallet-icon.svg" alt="" height="27" width="27">
+                                <img src="images/saveauto-logo-nerdwallet-wordmark.svg" alt="Nerdwallet" width="127" height="21">
+                            </div>
+                            <img src="images/saveauto-logo-competitor-3.svg" alt="The Zebra logo" width="122" height="37.57">
+                        </div>
+                        <figcaption>SaveAuto&rsquo;s competitors: Insurify, Nerdwallet, and The Zebra</figcaption>
+                    </figure>
+
+                    <figure class="card grid time">
+                        <div class="header">
+                            <p class="mono">02</p>
+                            <img src="images/saveauto-icon-alarm-clock.svg" alt="" width="16" height="16">
+                        </div>
+                        <div class="list">
+                            <div class="result">
+                                <p class="name">Saveautoinsurance.com</p>
+                                <div class="timing-bar">
+                                    <span class="bar-fill" style="width: 70%"></span>
+                                    <span class="bar-time">5:13</span>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <p class="name">Insurify</p>
+                                <div class="timing-bar">
+                                    <span class="bar-fill" style="width: 100%"></span>
+                                    <span class="bar-time">7:24</span>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <p class="name">Nerdwallet</p>
+                                <div class="timing-bar">
+                                    <span class="bar-fill" style="width: 29%"></span>
+                                    <span class="bar-time">2:11</span>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>clickthrough time testing</figcaption>
+                    </figure>
+
+                    <figure class="card grid insight">
+                        <p class="mono">03</p>
+                        <div style="display:flex;flex-direction:column;gap:16px;width:100%;align-items:flex-end;">
+                            <p class="body-sm" style="width:100%;color:var(--text-primary);">when designing for SaveAuto, we need to:</p>
+                            <div class="case-insight">
+                                <p class="mono">insight</p>
+                                <p class="case-insight__statement">support user recall throughout the flow to increase confidence</p>
+                                <p class="case-insight__count">1 of 2</p>
+                            </div>
+                        </div>
+                        <figcaption>design implications</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Design Decision 1 -->
+            <section class="case-row stacked-text">
+                <p class="mono primary row-eyebrow">Design Decision 1</p>
+                <h1 class="banner row-heading">Reducing user cognitive load</h1>
+                <p class="body-reg row-subheading">like, &ldquo;what car am I talking about again? and have I already filled in my husband&rsquo;s information?&rdquo;</p>
+            </section>
+
+            <!-- Comparison rows -->
+            <section class="case-row case-comparison">
+                <div class="comparison-row">
+                    <div class="comparison-text">
+                        <h1 class="heading">reorganizing the flow</h3>
+                        <p class="body-reg">Originally, users who wanted to add more than one car or person had to click a button for each additional object. I designed my prototype so that users could <strong>simply set the desired amount once</strong>.</p>
+                    </div>
+                    <figure class="card comparison-card">
+                        <p class="mono">01</p>
+                        <div class="case-comparison__media">
+                            <img src="images/info-arch-row.png" alt="Before and after: the original yes/no &ldquo;Do you have a second vehicle?&rdquo; question replaced by a single &ldquo;How many cars do you want to insure?&rdquo; choice from 1 to 5 cars" width="663" height="306" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption>putting users in control of their experience</figcaption>
+                    </figure>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-text">
+                        <h1 class="heading">adding breadcrumbs</h3>
+                        <p class="body-reg">User testing showed that car and policyholder information required frequent recall, so I added breadcrumbs to remind users where they are in the process.</p>
+                    </div>
+                    <figure class="card comparison-card">
+                        <p class="mono">02</p>
+                            <video loop preload="metadata" playsinline muted autoplay>
+                                <source src="videos/breadcrumb-row.mp4" type="video/mp4" />
+                            </video>
+                        <figcaption>showing history of user decisions</figcaption>
+                    </figure>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-text">
+                        <h1 class="heading">maintaining consistency</h3>
+                        <p class="body-reg">Users shouldn&rsquo;t have to wonder if two different things mean the same thing. I rewrote copy to have a consistent tone of voice, and made sure interaction outcomes were consistent.</p>
+                    </div>
+                    <figure class="card comparison-card">
+                        <p class="mono">03</p>
+                        <div class="case-comparison__media">
+                            <img src="images/consistency-row.png" alt="Before and after: one multi-select &ldquo;Any of these in the past 3 years?&rdquo; question split into three separate yes/no questions about tickets, accidents, and DUIs" width="676" height="293" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption>maintaining one question, one click consistency</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Design Decision 2 -->
+            <section class="case-row stacked-text">
+                <p class="mono primary row-eyebrow">Design Decision 2</p>
+                <h1 class="banner row-heading">Reducing friction with the interface</h1>
+                <p class="body-reg row-subheading">because less friction means higher retention and completion.</p>
+            </section>
+
+            <!-- Accordion: trust critique -->
+            <section class="case-row">
+                <figure class="accordion">
+                    <header>
+                        <fieldset class="accordion-tabs">
+                            <legend>interface improvement</legend>
+                            <label>
+                                <input type="radio" name="trust-options" aria-controls="minimizing-taps-panel" checked>
+                                <span class="mono">minimizing taps</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="trust-options" aria-controls="mobile-first-panel">
+                                <span class="mono">mobile first</span>
+                            </label>
+                        </fieldset>
+                        <div class="accordion-divider"></div>
+                    </header>
+                    <div class="accordion-content" id="minimizing-taps-panel" aria-live="polite">
+                        <div class="accordion-examples">
+                            <img src="images/accordion/taps-rec.webp" alt="Before and after: a single mm/dd/yyyy date field split into separate month, day, and year inputs, and a &ldquo;currently insured?&rdquo; dropdown replaced with a checkbox" width="1436" height="545" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="body-xsm accordion-caption">recommendation for Saveautoinsurance.com, adding user constraints to minimize effort</figcaption>
+                    </div>
+                    <div class="accordion-content" id="mobile-first-panel" aria-live="polite">
+                        <div class="accordion-examples">
+                            <img src="images/accordion/mobilefirst-rec.webp" alt="Mobile-first components: a &ldquo;search car make&rdquo; search bar to reduce scrolling, and a &ldquo;show more&rdquo; button replacing native browser dropdowns" width="1436" height="545" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption class="body-xsm accordion-caption">recommendation for  Saveautoinsurance.com, mobile-first approach</figcaption>
+                    </div>
+                </figure>
+            </section>
+
+            <!-- Proposal -->
+            <section class="case-row split-text">
+                <p class="mono primary row-eyebrow">proposal</p>
+                <h1 class="heading row-heading">what i presented to senior leadership</h1>
+                <p class="body-reg row-body">I took my final prototypes and presented them to the greater Arity organization, including the president. I took them through the different stages of the design process; scoping, research, prototyping, and user testing.</p>
+            </section>
+
+            <!-- Final video players -->
+            <section class="case-row">
+                <div class="card-container video">
+                    <figure class="card">
+                        <p class="mono">01</p>
+                        <div class="video-card-frame desktop">
+                            <video class="video-card-screen" loop preload="metadata" muted>
+                                <source src="videos/new-desktop-saveauto.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <figcaption>desktop design</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <p class="mono">02</p>
+                        <div class="video-card-frame mobile">
+                            <video class="video-card-screen" loop preload="metadata" muted>
+                                <source src="videos/new-mobile-saveauto.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <figcaption>mobile design</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Result -->
+            <section class="case-row stacked-text">
+                <p class="mono primary row-eyebrow">result</p>
+                <h1 class="banner row-heading">A success on all measurable outcomes</h1>
+                <p class="body-reg row-subheading">and some discussion about unmeasurable outcomes</p>
+            </section>
+
+            <!-- Result cards -->
+            <section class="case-row case-result">
+                <div class="case-result-grid">
+                    <figure class="result-card">
+                        <p class="mono">01</p>
+                        <h1 class="case-result heading">4:33 &rarr; 2:07</h1>
+                        <p class="case-result__description">a leap forward to becoming competitive in terms of speed</p>
+                    </figure>
+                    <figure class="result-card">
+                        <p class="mono">02</p>
+                        <p class="case-result body-sm">&ldquo;Feels <strong>much cleaner</strong>...doesn&rsquo;t feel like it would spam my phone&rdquo;</p>
+                        <p class="attribution">-data analytics intern</p>
+                    </figure>
+                    <figure class="result-card">
+                        <p class="mono">03</p>
+                        <img class="case-result" src="images/saveauto-icon-delivered.svg" alt="" width="32" height="32">
+                        <p class="case-result__description">shipped! homepage incorporated into current rebuild, flow placed on the timeline</p>
+                    </figure>
+                </div>
+            </section>
+        </main>
+        <script src="nav.js" defer></script>
+        <script src="play-on-hover.js" defer></script>
+    </body>
+</html>
