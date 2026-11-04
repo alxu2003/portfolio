@@ -62,6 +62,8 @@ ul, ol {
 }
 
 html {
+    color-scheme: dark;
+    background-color: var(--surface-primary);
     nav {
         position: fixed;
         inset: var(--min-spacing-block) var(--min-spacing-inline) auto;  /* top right bottom left */
