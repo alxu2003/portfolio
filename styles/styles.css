@@ -13,34 +13,35 @@
 }
 
 /* Keep the old page painted until the next one is ready on same-site navigation */
-@view-transition {
+/* @view-transition {
     navigation: auto;
 }
 
 /* Fade the old page out fully, then fade the new page in */
-::view-transition-old(root) {
-    animation: page-fade-out var(--page-fade-duration) var(--ease-signature) both;
+/* ::view-transition-old(root) {
+    animation-duration: 0.5s;
+    animation: page-fade-out var(--ease-signature) both;
 }
 
 ::view-transition-new(root) {
     animation: page-fade-in var(--page-fade-duration) var(--ease-signature) var(--page-fade-duration) both;
-}
+} */
 
-@keyframes page-fade-out {
+/* @keyframes page-fade-out {
     to { opacity: 0; }
 }
 
 @keyframes page-fade-in {
     from { opacity: 0; }
-}
+} */
 
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) {
     ::view-transition-group(*),
     ::view-transition-old(*),
     ::view-transition-new(*) {
         animation: none;
     }
-}
+} */
 
 *,
 *::before,

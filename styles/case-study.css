@@ -407,7 +407,7 @@
 
       /* Fade in on swap */
       @media (prefers-reduced-motion: no-preference) {
-        transition: opacity 1.2s var(--ease-signature);
+        transition: opacity 0.5s var(--ease-signature);
 
         @starting-style {
           opacity: 0;
