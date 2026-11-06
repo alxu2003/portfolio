@@ -13,11 +13,22 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@500&display=swap" />
+        <link rel="stylesheet" href="styles/type.css" />
+        <link rel="stylesheet" href="styles/colors.css" />
         <link rel="stylesheet" href="styles/styles.css" />
         <link rel="stylesheet" href="index.css" />
         <link rel="preload" as="image" href="images/allstate-arity-mockup.webp" fetchpriority="high" />
+        <!-- Prerender the case study in the background so clicking into it is instant (Chromium) -->
+        <script type="speculationrules">
+        {
+            "prerender": [
+                { "urls": ["saveauto.html"], "eagerness": "immediate" }
+            ]
+        }
+        </script>
+        <!-- Fallback for browsers without speculation rules: warm the cache instead -->
         <link rel="prefetch" href="saveauto.html" />
-        <link rel="prefetch" href="case-study.css" as="style"/>
+        <link rel="prefetch" href="styles/case-study.css" as="style" />
     </head>
     <body>
         <nav aria-label="Website navigation">
@@ -58,7 +69,7 @@
         </nav>
         <main>
             <figure class="project-card">
-                <a href="saveauto.html" class="mockup-card saveauto" preload>
+                <a href="saveauto.html" class="mockup-card saveauto">
                     <img
                         class="mockup-card__image"
                         src="images/allstate-arity-mockup.webp"
