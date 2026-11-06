@@ -1,8 +1,11 @@
 html {
   overscroll-behavior-y: contain;
+  background-color: var(--surface-primary);
 }
 
 body {
+  max-width: 1512px;
+  margin-inline: auto;
   padding: 0 var(--min-spacing-inline);
 
   /* Project card */

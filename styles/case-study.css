@@ -8,7 +8,7 @@
   gap: 64px;
   width: 100%;
   max-width: 1512px;
-  margin-inline: auto;
+  /* margin-inline: auto; */
   padding-top: calc(var(--navbar-height) + (var(--min-spacing-block) * 2));
   padding-bottom: calc(var(--min-spacing-block) * 3);
 }
@@ -52,7 +52,16 @@
       margin: 0;
       color: var(--text-primary);
     }
-  } 
+  }
+  
+  @media (width < 1200px) {
+    .case-hero {
+      grid-column: 2 / span 6;
+    }
+    .meta {
+      grid-column: 2 / span 9;
+    }
+  }
 }
 
 /* Device mockup row */
@@ -146,23 +155,52 @@
     grid-row: 3;
   }
 
+  @media (width < 1200px) {
+    .row-eyebrow,
+    .row-heading,
+    .row-subheading {
+      grid-column: 2 / -2;
+    }
+  }
 }
 
 /* Video player cards (original + final before/after screens) */
 .card-container {
   --container-height: 64vh;
-  grid-column: 3 / span 10;
+  display: grid;
+
+  grid-column: 3 / span 8;
   height: var(--container-height);
   width: fit-content;
 
+  @media (width < 1200px) {
+    grid-column: 2 / span 10;
+  }
+
   &.video {
-    display: flex;
-    gap: 8px;
+    grid-template-columns: subgrid;
+    /* display: flex;
+    gap: 8px; */
+    height: fit-content;
+
+    .card.desktop {
+      grid-column: 1 / span 6;
+    }
+    .card.mobile {
+      grid-column: 7 / span 2;
+    }
+
+    @media (width < 1200px) {
+      .card.desktop {
+        grid-column: 1 / span 7;
+      }
+      .card.mobile {
+        grid-column: 8 / span 3;
+      }
+    }
   }
 
   &.research {
-    grid-column: 3 / span 8;
-    display: grid;
     grid-template-columns: 1fr 1fr;
     /* Row 1 hugs the logo card; the time card spans the fr row, so it's excluded from row 1's sizing */
     grid-template-rows: auto 1fr;
@@ -250,7 +288,7 @@
     border-radius: 16px;
     background-color: var(--surface-secondary);
     flex: none;
-    height: 100%;
+    height: fit-content;
 
     &.grid {
       height: fit-content;
@@ -267,10 +305,7 @@
     .video-card-frame {
       pointer-events: none;
       position: relative;
-      height: calc(
-        100% - 2 * var(--card-gap)
-        - var(--card-label-line-height) * (var(--mono-size) + var(--body-xsm-size))
-      );
+      height: auto;
       overflow: hidden;
       border: 1px solid var(--disabled);
       background-color: var(--black);
@@ -291,8 +326,8 @@
         /* Re-enable hover for play-on-hover.js (card + frame set none, which inherits) */
         pointer-events: auto;
         display: block;
-        height: 100%;
-        width: auto;
+        height: auto;
+        width: 100%;
         background-color: var(--black);
         opacity: .8;
         border-radius: 30px;
@@ -330,7 +365,7 @@
 /* Accordion */
 
 .accordion {
-  grid-column: 3 / span 8;
+  grid-column: 3 / -3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -433,6 +468,9 @@
       text-align: end;
     }
   }
+  @media (width < 1200px){
+    grid-column: 2 / -2;
+  }
 }
 /* Research cards */
 
@@ -483,7 +521,7 @@
 /* Design-decision before/after comparison rows */
 
 .case-comparison {
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto, 3);
   gap: 32px 8px;
 
   .comparison-row {
@@ -497,6 +535,14 @@
       flex-direction: column;
       gap: 16px;
     }
+
+    @media (width < 1200px) {
+      grid-column: 2 / -2;
+      
+      .comparison-text {
+        grid-column: 1 / span 4;
+      }
+    }
   }
 
   .comparison-card {
@@ -505,6 +551,10 @@
     
     video {
       width: 100%;
+    }
+
+    @media (width < 1200px) {
+      grid-column: 6 / span 6;
     }
   }
 }
@@ -557,6 +607,13 @@
         font-size: var(--body-sm-size);
       }
     }
+    @media (width < 1200px) {
+      grid-column: 2 / -2;
+
+      .result-card {
+        grid-column: span 3;
+      }
+    }
   }
   
 }
@@ -567,6 +624,9 @@
 
 /* Small-screen fallback: collapse the 12-column grid to a single readable column */
 @media (width < 900px) {
+  .case {
+    padding: var(--min-spacing-inline);
+  }
   .case-row > * {
     grid-column: 1 / -1 !important;
   }
