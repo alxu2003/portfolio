@@ -274,6 +274,33 @@
       grid-row: 2;
     }
   }
+
+  /* Image/video cards that split the content columns evenly; .wide takes a whole row */
+  &.gallery {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 8px;
+    align-items: start;
+    width: auto;
+    height: auto;
+
+    .card {
+      &.wide {
+        grid-column: 1 / -1;
+
+        /* Keep full-row videos from filling the whole viewport */
+        .video-card-frame {
+          align-self: center;
+          width: 75%;
+        }
+      }
+
+      > img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+    }
+  }
 }
 
 .card {
