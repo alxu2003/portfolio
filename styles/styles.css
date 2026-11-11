@@ -232,6 +232,20 @@ html {
             --card-bg-color: var(--saveauto-blue);
         }
 
+        /* Flat brand color, no pattern; the banner sits inset like a framed screenshot */
+        &.yfm {
+            --card-bg-color: var(--yfm-orange);
+            padding: 48px;
+
+            @media (width < 644px) {
+                padding: clamp(12px, 4vw, 32px);
+            }
+
+            .mockup-card__image {
+                border-radius: 8px;
+            }
+        }
+
         @media (width < 644px) {
             padding: clamp(12px, 4vw, 32px) clamp(12px, 4vw, 32px) clamp(8px, 2vw, 16px);
         }
